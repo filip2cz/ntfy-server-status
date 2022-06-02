@@ -7,7 +7,7 @@ ntfytopic="komarekf-test"
 debug=0
 
 #script
-status=0
+status=1
 while :
 do
     if (($debug == 1)); then
