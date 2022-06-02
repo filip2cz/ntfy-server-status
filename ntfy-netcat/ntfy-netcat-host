@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#config
+serverip="localhost"
+serverport="4444"
+
+#script
+while :
+do
+    echo 1 | nc $serverip $serverport -w 1
+    sleep 1
+done

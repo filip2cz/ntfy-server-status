@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#config
+servername="myserver"
+localserverport="4444"
+reportserverip="localhost"
+ntfytopic="komarekf-test"
+
+#script
+while :
+do
+    status="null"
+    status=$(timeout 5s ncat -l -w 1 -p $localserverport)
+    #echo debug, status is: $status
+    if (($status == 1)); then
+        echo ok
+    else
+        curl -d "$servername ($reportserverip) is offline." ntfy.sh/$ntfytopic
+        echo "$servername ($serverip) is offline."
+    fi
+    status=null
+    sleep 2
+done
