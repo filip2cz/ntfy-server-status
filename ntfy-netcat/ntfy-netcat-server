@@ -7,6 +7,7 @@ reportserverip="localhost"
 ntfytopic="komarekf-test"
 
 #script
+log=1
 while :
 do
     status="null"
@@ -14,9 +15,17 @@ do
     #echo debug, status is: $status
     if (($status == 1)); then
         echo ok
+        if (($log == 0)); then
+            curl -d "$servername ($reportserverip) is online." ntfy.sh/$ntfytopic
+            echo "$servername ($serverip) is online."
+            log=1
+        fi
     else
-        curl -d "$servername ($reportserverip) is offline." ntfy.sh/$ntfytopic
-        echo "$servername ($serverip) is offline."
+        if (($log == 1)); then
+            curl -d "$servername ($reportserverip) is offline." ntfy.sh/$ntfytopic
+            echo "$servername ($serverip) is offline."
+            log=0
+        fi
     fi
     status=null
     sleep 2
