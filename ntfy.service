@@ -1,5 +1,5 @@
 [Unit]
-Description=Pinging and report if server is online or offline through ntfy.sh
+Description=Checking and report if server is online or offline through ntfy.sh
 
 [Service]
 Type=simple
