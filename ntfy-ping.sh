@@ -3,25 +3,42 @@
 #config:
 servername="myserver"
 serverip="8.8.8.8"
-ntfytopic="mytopic"
+ntfytopic="komarekf-test"
+debug=0
 
+#script
 status=0
-while (($status == 0))
+while :
 do
-   if ! [ "`ping -c 1 $serverip`" ]; then
+    if (($debug == 1)); then
+            echo "new ping test"
+
+            echo
+    fi
+    if ! [ "`ping -c 1 $serverip`" ]; then
+        if (($debug == 1)); then
+            echo "ping failed"
+            echo $status
+            echo
+        fi
         if (($status == 1)); then
-            echo $servername ($serverip) is offline.
+            echo "$servername ($serverip) is offline."
             status=0
             curl -d "$servername ($serverip) is offline." ntfy.sh/$ntfytopic
         fi
-   else
+    else
+        if (($debug == 1)); then
+            echo "ping done"
+            echo $status
+            echo
+        fi
         if (($status == 0)); then
-            echo $servername ($serverip) is online.
+            echo "$servername ($serverip) is online."
             status=1
             curl -d "$servername ($serverip) is online." ntfy.sh/$ntfytopic
         fi
-   fi
-   sleep 30
+    fi
+    sleep 5
 done
 
 # created by filip2cz
