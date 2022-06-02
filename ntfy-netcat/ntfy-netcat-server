@@ -28,5 +28,5 @@ do
         fi
     fi
     status=null
-    sleep 2
+    sleep 10
 done

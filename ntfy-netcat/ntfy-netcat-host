@@ -8,5 +8,5 @@ serverport="4444"
 while :
 do
     echo 1 | nc $serverip $serverport -w 1
-    sleep 1
+    sleep 3
 done
