@@ -1,0 +1,9 @@
+[Unit]
+Description=Pinging and report if server is online or offline through ntfy.sh
+
+[Service]
+Type=simple
+ExecStart=enter file path
+
+[Install]
+WantedBy=multi-user.target

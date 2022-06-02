@@ -12,7 +12,7 @@ while :
 do
     if (($debug == 1)); then
             echo "new ping test"
-
+            echo $status
             echo
     fi
     if ! [ "`ping -c 1 $serverip`" ]; then
