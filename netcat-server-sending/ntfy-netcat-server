@@ -9,10 +9,11 @@ maxtries=2
 debug=1
 
 #script
+tries=0
 log=1
 while :
 do
-    status="null"
+    status=0
     status=$(timeout 5s ncat -l -w 1 -p $localserverport)
     if (($debug == 1)); then
         echo status is: $status
