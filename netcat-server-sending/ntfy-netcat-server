@@ -2,9 +2,9 @@
 
 #config
 servername="myserver"
-serverport=4444
-reportserverip=192.168.1.110
-ntfytopic="komarekf-test"
+localserverport=4444
+reportserverip=0.0.0.0
+ntfytopic="ntfy-topic"
 maxtries=2
 debug=1
 
