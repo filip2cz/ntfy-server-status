@@ -7,7 +7,7 @@ localserverport="4444"
 #script
 while : 
 do
-    timeout 5s ./net -l $localserverport
+    ./net -l $localserverport
     echo ok
     sleep 1
 done
