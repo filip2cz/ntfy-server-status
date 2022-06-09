@@ -1,0 +1,47 @@
+#!/bin/bash
+
+#config
+servername="myserver"
+serverport=4444
+reportserverip="localhost"
+ntfytopic="komarekf-test"
+maxtries=2
+debug=1
+
+#script
+tries=0
+log=1
+while :
+do
+    status="null"
+    status=`./net $reportserverip $serverport`
+    if (($debug == 1)); then
+        echo status is: $status
+        echo tries is: $tries
+    fi
+    if (($status == 1)); then
+        if (($debug == 1)); then
+            echo ok
+        fi
+        if (($log == 0)); then
+            curl -d "$servername ($reportserverip) is online." ntfy.sh/$ntfytopic
+            echo "$servername ($serverip) is online."
+            log=1
+            tries=0
+        fi
+    else
+        if (($debug == 1)); then
+            echo not ok
+        fi
+        if (($log == 1)); then
+            let "tries+=1"
+            if (($tries == $maxtries)); then
+                curl -d "$servername ($reportserverip) is offline." ntfy.sh/$ntfytopic
+                echo "$servername ($serverip) is offline."
+                log=0
+            fi
+        fi
+    fi
+    status=null
+    sleep 3
+done
