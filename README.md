@@ -20,4 +20,4 @@ There are several old versions. The oldest is the ping version, which doesn't re
 Then there is the netcat version, which works fine, but in some cases the server-reporting version doesn't work, I found this problem in some Linux distributions, it worked in some, however it was replaced.
 
 ## What I forked:
-1) C part in host-reporting and server-reporting. It's from a friend of mine who doesn't have the code on github, but he agreed to use it and the original code as I got it from him is here: 
+1) C part in host-reporting and server-reporting. It's from a friend of mine who doesn't have the code on github, but he agreed to use it and the original code as I got it from him is here: https://github.com/filip2cz/ntfy-server-status/blob/main/forked%20files/net.c
