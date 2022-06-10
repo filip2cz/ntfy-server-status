@@ -8,7 +8,7 @@ There are 2 versions that differ depending on who controls who. In the server-re
 The current version has 2 parts, part written in C and part in bash script. The bash script has all the configuration. The C part comes precompiled for Linux x86_64, however it can be compiled using the "gcc -o net net.c" command.
 
 ## Current issues and bugs
-1) It is printing syntax error on line 21 when the connection is not established, but it is still working :)
+1) NetCat version is printing syntax error on line 21 when the connection is not established, but it is still working :)
 2) Server-reporting version is littlebit broken (It works, but has a low connection success rate. This can be solved by a large number of attempts before reporting). It is possible to use the old netcat version that uses netcat.
 
 ## Other info
