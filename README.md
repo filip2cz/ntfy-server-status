@@ -13,7 +13,7 @@ The current version has 2 parts, part written in C and part in bash script. The 
 
 ## Other info
 I am not the full author of that c part, I only forked it.
-I plan to do the whole thing in C
+I plan to do the whole thing in C.
 
 ## Old versions
 There are several old versions. The oldest is the ping version, which doesn't require a client host or open port, but you need to have a direct ip address to the controlled server (not a router address or anything).
