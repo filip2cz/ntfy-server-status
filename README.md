@@ -1,4 +1,4 @@
-#replaced by https://github.com/louislam/uptime-kuma
+# replaced by https://github.com/louislam/uptime-kuma
 
 # NTFY server status reporting
 This reporting through ntfy.sh, if your server is online or offline.
